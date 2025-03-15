@@ -5,7 +5,7 @@ import java.io.*;
 public class SingletonSerialization implements Serializable {
     //static initialization
     //Memory is allocated once at class loading time, rather than per object
-    private static SingletonSerialization x =  new SingletonSerialization();
+    private static final SingletonSerialization x =  new SingletonSerialization();
 
     private SingletonSerialization() {
         //private constructor to restrict initialization
@@ -24,7 +24,7 @@ public class SingletonSerialization implements Serializable {
     }
 }
 class SingletonSerializationMain {
-    public static void main(String args[]) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
             SingletonSerialization instance = SingletonSerialization.getInstance();
             System.out.println(instance.hashCode());
