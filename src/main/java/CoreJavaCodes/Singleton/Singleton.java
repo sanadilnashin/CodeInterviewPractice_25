@@ -1,6 +1,4 @@
-package CoreJavaCodes;
-
-import java.lang.reflect.Constructor;
+package CoreJavaCodes.Singleton;
 
 public class Singleton implements Cloneable {
     //static initialization
@@ -33,19 +31,12 @@ class SingletonMain {
             System.out.println(instance.hashCode());
 
             //cloning
-           // Singleton y = (Singleton) instance.clone();
-            //System.out.println(y.hashCode());
+            Singleton y = (Singleton) instance.clone();
+            System.out.println(y.hashCode());
 
-            //reflection allow access to private contructor,field,method by using setAccessible
-            Constructor<Singleton> ref=Singleton.class.getDeclaredConstructor();
-            ref.setAccessible(true);
-            System.out.println(ref.hashCode());
-
-        } /*catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException e) {
             System.out.println(e.getMessage());
 
-        } */catch (NoSuchMethodException e) {
-            e.printStackTrace();
         }
 
     }
