@@ -1,4 +1,4 @@
-package CoreJavaCodes;
+package CoreJavaCodes.Collection;
 
 import java.util.HashSet;
 import java.util.Set;
